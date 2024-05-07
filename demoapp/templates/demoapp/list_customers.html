@@ -1,0 +1,10 @@
+<ul>
+    {% for customer in customers %}
+        <li>{{ customer.firstname }} {{ customer.surname }}</li>
+        <ul>
+            {% for key, value in customer.customerdocumentmodel.extracted_json.items %}
+                <li>{{ key }}: {{ value }}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+</ul>
